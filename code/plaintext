@@ -1,0 +1,23 @@
+DirAware-LightDet/
+├── configs/                # 配置文件
+│   ├── munich.yaml         # 慕尼黑航空车辆数据集配置
+│   └── uav_mato.yaml       # UAV-MATO多光谱数据集配置
+├── data/                   # 数据集相关
+│   ├── __init__.py
+│   ├── munich_dataset.py   # 慕尼黑数据集加载与增强
+│   └── uav_mato_dataset.py # UAV-MATO数据集加载与增强
+├── models/                 # 核心模型实现
+│   ├── __init__.py
+│   ├── backbone.py         # 通道堆叠轻量级骨干网络(Stem/Stage Block)
+│   ├── direction_head.py   # 方向感知无锚框检测头
+│   ├── semantic_enhance.py # 语义特征增强模块(注意力+上下文)
+│   └── dir_aware_det.py    # 整体检测模型(整合骨干+头+增强)
+├── utils/                  # 工具函数
+│   ├── __init__.py
+│   ├── loss.py             # 自适应加权损失函数
+│   ├── metrics.py          # 检测指标计算(mAP/F1)
+│   └── setup.py            # 随机种子固定/环境配置
+├── train.py                # 训练脚本
+├── test.py                 # 测试脚本
+├── requirements.txt        # 依赖库
+└── README.md               # 项目说明
