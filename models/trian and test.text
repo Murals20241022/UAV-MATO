@@ -1,0 +1,8 @@
+训练慕尼黑数据集
+python train.py --config configs/munich.yaml
+
+训练UAV-MATO数据集
+python train.py --config configs/uav_mato.yaml
+
+测试：
+python test.py --config configs/munich.yaml --checkpoint ./checkpoints/munich/best_model.pth
