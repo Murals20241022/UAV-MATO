@@ -1,0 +1,22 @@
+# 数据集配置
+dataset: 'munich'
+data_root: './data/munich/'  # 数据集根路径
+num_classes: 2  # 慕尼黑数据集：车辆/行人
+split_ratio: [0.7, 0.1, 0.2]  # 训练/验证/测试划分
+
+# 训练参数
+epochs: 100
+batch_size: 16  # 论文设置（慕尼黑数据集）
+val_batch_size: 8
+lr: 1e-3  # 主模型学习率（论文§IV.B）
+loss_lr: 1e-4  # 损失平衡参数δ的学习率
+weight_decay: 5e-4
+anneal_cycle: 5000  # 余弦退火周期（论文§IV.B）
+min_lr: 1e-6  # 最小学习率
+seed: 42  # 固定随机种子（论文§IV.B）
+log_interval: 10  # 每10个batch打印日志
+save_path: './checkpoints/munich/'  # 模型保存路径
+
+# 模型参数
+stack_depth: 3  # Stage Block堆叠深度（论文最优值）
+iou_threshold: 0.5  # mAP计算IOU阈值
